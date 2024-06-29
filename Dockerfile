@@ -9,7 +9,7 @@ COPY . .
 RUN go get -d -v ./...
 RUN go install -v ./...
 
-FROM bitnami/minideb:buster
+FROM bitnami/minideb:bookworm
 COPY --from=builder /go/bin/dbuf /usr/local/bin
 COPY --from=builder /go/bin/dbuf-client /usr/local/bin
 
